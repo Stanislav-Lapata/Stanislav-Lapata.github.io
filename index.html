@@ -19,45 +19,48 @@
         );
       }
 
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        toggleColorModeClass()
+      });
+
       toggleColorModeClass()
     </script>
   </head>
 
   <body class="min-h-screen flex flex-col bg-gbl-bg dark:bg-gbd-bg text-gbl-fg dark:text-gbd-fg font-display">
-    <header id="navbar" class="rounded-bl-(--radius2) rounded-br-(--radius2) fixed w-2/4 bg-gbl-bg dark:bg-gbd-bg top-0 left-1/4 shadow-sm shadow-gbl-yellow transition-all duration-200 opacity-0 flex justify-center py-4 px-80 z-1">
-  <a class="mr-4 content-center" href="#experience">
-  
-    Experience
-  
+    <header id="navbar" class="rounded-bl-(--radius2) rounded-br-(--radius2) fixed 2xl:w-[1280px] left-[0] right-[0] m-auto bg-gbl-bg dark:bg-gbd-bg top-0 shadow-sm shadow-gbl-yellow dark:shadow-gbd-yellow transition-all duration-200 opacity-0 py-4 z-1">
+  <nav class="flex justify-center">
+    <a class="nav-link mr-4 content-center" href="#about-me">
+  About Me
 </a>
-  <a class="mr-4 content-center" href="#skills">
-  
-    Skills
-  
+    <a class="nav-link mr-4 content-center" href="#experience">
+  Experience
 </a>
-  <a class="mr-4 content-center" href="#contact-me">
-  
-    Contact Me
-  
+    <a class="nav-link mr-4 content-center" href="#skills">
+  Skills
 </a>
-  <button id="color-mode" class="text-xl font-bold py-2 px-4">
-    
-  </button>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('color-mode').addEventListener("click", () => {
-        localStorage.theme === "dark" ? localStorage.theme = "light" : localStorage.theme = "dark"
-        toggleColorModeClass()
+    <a class="nav-link mr-4 content-center" href="#contact-me">
+  Contact Me
+</a>
+    <button id="color-mode" class="text-xl font-bold py-2 px-4">
+      
+    </button>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById('color-mode').addEventListener("click", () => {
+          localStorage.theme === "dark" ? localStorage.theme = "light" : localStorage.theme = "dark"
+          toggleColorModeClass()
+        });
       });
-    });
-  </script>
+    </script>
+  </nav>
 </header>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("navbar");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > window.innerHeight / 100 * 70) {
+      if (window.scrollY > window.innerHeight / 100 * 80) {
         navbar.classList.add("opacity-100");
       } else {
         navbar.classList.remove("opacity-100");
@@ -65,38 +68,104 @@
     });
   });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2
+    };
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+
+          navLinks.forEach((link) => {
+            link.classList.remove("text-gbl-green", "dark:text-gbd-green", "font-bold");
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("text-gbl-green", "dark:text-gbd-green", "font-bold");
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>
     <main class="flex grow">
       <div class="grow">
-        <div class="m-auto w-5xl px-10 shadow-lg shadow-gbl-bg1 dark:shadow-gbd-bg1">
-          <p class="flex justify-center">
+        <div class="m-auto w-5xl">
+          <div class="flex flex-col justify-center">
+  <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="introducing">
+  
   <div class="min-h-screen flex flex-col justify-center text-center">
-  <div>
-    <button id="color-mode1" class="cursor-pointer text-4xl font-bold py-2 px-2">
-      
-    </button>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById('color-mode1').addEventListener("click", () => {
-          localStorage.theme === "dark" ? localStorage.theme = "light" : localStorage.theme = "dark"
-          toggleColorModeClass()
+    <div class="relative shadow-sm-c shadow-gbl-yellow dark:shadow-gbd-yellow animate-pulse-shadow p-20">
+      <div class="absolute -top-8 rotate-45 bg-gbl-bg dark:bg-gbd-bg left-0 right-0 m-auto shadow-sm-c shadow-gbl-yellow dark:shadow-gbd-yellow animate-pulse-shadow w-16 h-16">
+        <button id="color-mode1" class="cursor-pointer text-4xl font-bold w-16 h-16 pr-2">
+          
+        </button>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          document.getElementById('color-mode1').addEventListener("click", () => {
+            localStorage.theme === "dark" ? localStorage.theme = "light" : localStorage.theme = "dark"
+            toggleColorModeClass()
+          });
         });
-      });
-    </script>
-    <div>
-      Hello <span class="inline-block animate-wiggle">󱠡</span>
-      , I'm <span class="text-bold text-gbl-red-dim">Stanislav</span>.
-    </div>
-    <div class="mb-10">I'm a full stack web developer.</div>
+      </script>
+      <div class="text-3xl mb-3">
+        Hello <span class="inline-block animate-wiggle">󱠡</span>
+        , I'm <span class="text-bold text-gbl-red-dim dark:text-gbd-red-dim">Stanislav</span>.
+      </div>
+      <div class="flex justify-center text-3xl text-bold my-10">
+        <span class="mr-2 text-gbl-green dark:text-gbd-green">❯</span>
+        <span class="text-left overflow-hidden whitespace-nowrap text-gvl-fg dark:text-gvd-fg self-center text-xl animate-typing">
+          I'm a backend developer with some frontend skills.
+        </span>
+      </div>
 
-    <a class="inline-block hover:animate-pulse hover:shadow-md hover:shadow-gbl-fg hover:dark:shadow-gbd-fg py-2 px-4 border-2 rounded-md" href="/images/myw3schoolsimage.jpg" download>
-      Download CV
-    </a>
+      <a class="inline-block hover:animate-pulse hover:shadow-md hover:shadow-gbl-fg hover:dark:shadow-gbd-fg py-2 px-4 border-2 rounded-md" href="/Stanislav-Lapata-CV.pdf" download>
+        󰥥 Download CV
+      </a>
+      <a class="inline-block hover:animate-pulse hover:shadow-md hover:shadow-gbl-fg hover:dark:shadow-gbd-fg py-2 px-4 border-2 rounded-md" href="#about-me">
+        Go Next 
+      </a>
+    </div>
   </div>
-</div>
-  <h2 class="text-5xl mt-40 mb-10" id="experience">
+
+</section>
+  <div class="pt-20 px-10 shadow-lg shadow-gbl-bg1 dark:shadow-gbd-bg1">
+    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="about-me">
+  
+  <h2 class="text-5xl text-gbl-green dark:text-gbd-green mb-10">
+  About Me
+</h2>
+  <div>
+    <p class="indent-2 mb-2 w-3/4">
+      I’m a backend developer with a deep passion for Elixir, Phoenix and Actor system and all things backend development.
+    </p>
+    <p class="indent-2 mb-2 w-3/4">
+      The unique combination of logic and technology and never running out of new things to discover, drives my excitement and passion for backend development.
+    </p>
+    <p class="indent-2 mb-2 w-3/4 mb-100">
+      When I’m not at my computer I like to spend my time reading, keeping fit and playing guitar.
+    </p>
+  </div>
+
+</section>
+    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="experience">
+  
+  <h2 class="text-5xl text-gbl-green dark:text-gbd-green mb-10">
   Experience
 </h2>
-<div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
+  <div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
   <h3 class="text-3xl ml-2 pb-5">
   Biz Launch Equity, Inc
 </h3>
@@ -105,18 +174,18 @@
 </h4>
   <div>
     
-  <ul class="ml-10 list-disc">
+    <ul class="ml-10 list-disc">
   
-    <li>Developed full-stack applications with React.js and Ruby On Rails.</li>
-    <li>
-      Implemented message system that receives, saves and synchronizes messages between clients via elixir and websockets.
-    </li>
-  
+      <li>Developed full-stack applications with React.js and Ruby On Rails.</li>
+      <li>
+        Implemented message system that receives, saves and synchronizes messages between clients via elixir and websockets.
+      </li>
+    
 </ul>
-
+  
   </div>
 </div>
-<div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
+  <div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
   <h3 class="text-3xl ml-2 pb-5">
   Wellnuts, Ltd
 </h3>
@@ -125,18 +194,18 @@
 </h4>
   <div>
     
-  <ul class="ml-10 list-disc">
+    <ul class="ml-10 list-disc">
   
-    <li>Developed backend server with Elixir and Phoenix.</li>
-    <li>
-      Conducted code reviews, contributing to maintaining high standards of code quality and team collaboration.
-    </li>
-  
+      <li>Developed backend server with Elixir and Phoenix.</li>
+      <li>
+        Conducted code reviews, contributing to maintaining high standards of code quality and team collaboration.
+      </li>
+    
 </ul>
-
+  
   </div>
 </div>
-<div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
+  <div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
   <h3 class="text-3xl ml-2 pb-5">
   Modus Group, LLC
 </h3>
@@ -145,160 +214,172 @@
 </h4>
   <div>
     
-  <ul class="ml-10 list-disc">
+    <ul class="ml-10 list-disc">
   
-    <li>Developed backend server with Ruby and Ruby On Rails.</li>
-  
+      <li>Developed backend server with Ruby and Ruby On Rails.</li>
+    
 </ul>
-
+  
   </div>
 </div>
-  <h2 class="text-5xl mt-40 mb-10" id="skills">
+
+</section>
+    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="skills">
+  
+  <h2 class="text-5xl text-gbl-green dark:text-gbd-green mb-10">
   Skills
 </h2>
-<h2 class="text-3xl text-center">Backend</h2>
-<div class="grid grid-cols-1 gap-6 py-10 md:grid-cols-2 lg:grid-cols-3">
+  <h3 class="text-3xl ml-2 pb-5">
+  Backend
+</h3>
+<div class="grid gap-6 pb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
   
-  <a href="https://elixir-lang.org/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://elixir-lang.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5">
   Elixir
 </h3>
   <span class="text-5xl"></span>
 </a>
-  <a href="https://www.phoenixframework.org/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://www.phoenixframework.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5">
   Phoenix
 </h3>
   <span class="text-5xl"></span>
 </a>
-  <a href="https://www.ruby-lang.org/ru/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://www.ruby-lang.org/ru/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5">
   Ruby
 </h3>
   <span class="text-5xl"></span>
 </a>
-  <a href="https://rubyonrails.org/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://rubyonrails.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5">
   Ruby On Rails
 </h3>
   <span class="text-5xl"></span>
 </a>
-
-</div>
-<h2 class="text-3xl text-center">Frontend</h2>
-<div class="grid grid-cols-1 gap-6 py-10 md:grid-cols-2 lg:grid-cols-3">
-  
-  <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
-  JavaScript
-</h3>
-  <span class="text-5xl"></span>
-</a>
-  <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
-  TypeScript
-</h3>
-  <span class="text-5xl"></span>
-</a>
-  <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
-  React.js
-</h3>
-  <span class="text-5xl"></span>
-</a>
-  <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
-  Tailwind
-</h3>
-  <span class="text-5xl"></span>
-</a>
-  <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
-  CSS
-</h3>
-  <span class="text-5xl"></span>
-</a>
-  <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
-  HTML
-</h3>
-  <span class="text-5xl"></span>
-</a>
-
-</div>
-<h2 class="text-3xl text-center">Databases</h2>
-<div class="grid grid-cols-1 gap-6 py-10 md:grid-cols-2 lg:grid-cols-3">
-  
-  <a href="https://redis.io/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
-  Redis
-</h3>
-  <span class="text-5xl"></span>
-</a>
-  <a href="https://www.postgresql.org/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://www.postgresql.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5">
   PostgreSQL
 </h3>
   <span class="text-5xl"></span>
 </a>
-
-</div>
-<h2 class="text-3xl text-center">Protocols</h2>
-<div class="grid grid-cols-1 gap-6 py-10 md:grid-cols-2 lg:grid-cols-3">
+    <a href="https://redis.io/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5">
+  Redis
+</h3>
+  <span class="text-5xl"></span>
+</a>
   
-  <a href="https://graphql.org/" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+</div>
+  <h3 class="text-3xl ml-2 pb-5">
+  Frontend
+</h3>
+<div class="grid gap-6 pb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  
+    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5">
+  JavaScript
+</h3>
+  <span class="text-5xl"></span>
+</a>
+    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5">
+  TypeScript
+</h3>
+  <span class="text-5xl"></span>
+</a>
+    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5">
+  React.js
+</h3>
+  <span class="text-5xl"></span>
+</a>
+    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5">
+  Tailwind
+</h3>
+  <span class="text-5xl"></span>
+</a>
+    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5">
+  CSS
+</h3>
+  <span class="text-5xl"></span>
+</a>
+    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5">
+  HTML
+</h3>
+  <span class="text-5xl"></span>
+</a>
+  
+</div>
+  <h3 class="text-3xl ml-2 pb-5">
+  Others
+</h3>
+<div class="grid gap-6 pb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  
+    <a href="https://graphql.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5">
   GraphQL
 </h3>
   <span class="text-5xl"></span>
 </a>
-  <a href="https://en.wikipedia.org/wiki/REST" class="third:rounded-s-none first:rounded-br-none h-40 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow  hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://en.wikipedia.org/wiki/REST" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5">
   REST
 </h3>
   <span class="text-5xl">󱂛</span>
 </a>
-
+  
 </div>
-  <h2 class="text-5xl mt-40 mb-10" id="contact-me">
+
+</section>
+    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="contact-me">
+  
+  <h2 class="text-5xl text-gbl-green dark:text-gbd-green mb-10">
   Contact Me
 </h2>
-<form action="https://formspree.io/f/mblgzozk" method="POST">
-  <div class="flex flex-col mb-10">
+  <form action="https://formspree.io/f/mblgzozk" method="POST">
+    <div class="flex flex-col mb-10">
   
-    <label for="email">
-      Email
-    </label>
-    <input class="bg-gbl-bg3 dark:bg-gbd-bg3 outline-none focus:shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow w-2/3 rounded-md lg:h-10 md:h-full px-4 py-2" id="email" name="email" type="email">
-  
+      <label for="email">
+        Email
+      </label>
+      <input class="bg-gbl-bg3 dark:bg-gbd-bg3 outline-none focus:shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow w-full md:w-2/3 rounded-md lg:h-10 md:h-full px-4 py-2" id="email" name="email" type="email">
+    
 </div>
-  <div class="flex flex-col mb-10">
+    <div class="flex flex-col mb-10">
   
-    <label for="name">
-      Name
-    </label>
-    <input class="bg-gbl-bg3 dark:bg-gbd-bg3 outline-none focus:shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow w-2/3 rounded-md lg:h-10 md:h-full px-4 py-2" id="name" name="name" type="text">
-  
+      <label for="name">
+        Name
+      </label>
+      <input class="bg-gbl-bg3 dark:bg-gbd-bg3 outline-none focus:shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow w-full md:w-2/3 rounded-md lg:h-10 md:h-full px-4 py-2" id="name" name="name" type="text">
+    
 </div>
-  <div class="flex flex-col mb-10">
+    <div class="flex flex-col mb-10">
   
-    <label for="message">
-      Message
-    </label>
-    <textarea class="bg-gbl-bg3 dark:bg-gbd-bg3 w-2/3 rounded-md outline-none resize-y focus:shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow px-4 py-2" id="message" name="message" rows="6"></textarea>
-  
+      <label for="message">
+        Message
+      </label>
+      <textarea class="bg-gbl-bg3 dark:bg-gbd-bg3 w-full md:w-2/3 rounded-md outline-none resize-y focus:shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow px-4 py-2" id="message" name="message" rows="6"></textarea>
+    
 </div>
-  <div class="pb-10">
-    <button class="inline-block hover:animate-pulse hover:shadow-md hover:shadow-gbl-fg hover:dark:shadow-gbd-fg py-2 px-4 border-2 rounded-md" type="submit">
-      Submit
-    </button>
+    <div class="pb-10">
+      <button class="inline-block hover:animate-pulse hover:shadow-md hover:shadow-gbl-yellow hover:dark:shadow-gbd-yellow py-2 px-4 border-2 rounded-md" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+
+</section>
   </div>
-</form>
-</p>
+</div>
         </div>
       </div>
       <aside id="sidebar" class="fixed right-0 h-screen text-4xl flex flex-col justify-center opacity-0 transition-all duration-200">
-  <div class="shadow-sm-l shadow-gbl-yellow dark:shadow-gbd-yellow p-6 flex flex-col border-gbl-gray rounded-bl-(--radius1) rounded-tl-(--radius1)">
+  <div class="shadow-sm-l shadow-gbl-yellow dark:shadow-gbd-yellow p-6 flex flex-col rounded-bl-(--radius1) rounded-tl-(--radius1)">
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/Stanislav-Lapata/" class="mb-2">󰊤</a>
     <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/stanislavlapata/?next=%2F" class="mb-2">󰋾</a>
     <a target="_blank" rel="noopener noreferrer" href="mailto:stanislavlapata@gmail.com" class="mb-2">󰇮</a>
@@ -311,7 +392,7 @@
     const sidebar = document.getElementById("sidebar");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > window.innerHeight / 100 * 70) {
+      if (window.scrollY > window.innerHeight / 100 * 80) {
         sidebar.classList.add("opacity-100");
       } else {
         sidebar.classList.remove("opacity-100");
@@ -320,7 +401,6 @@
   });
 </script>
     </main>
-    <footer class="flex justify-center border-t-2 p-4">Footer</footer>
   </body>
 
   
