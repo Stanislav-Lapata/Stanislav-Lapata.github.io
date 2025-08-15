@@ -103,10 +103,10 @@
       <div class="grow">
         <div class="m-auto w-5xl">
           <div class="flex flex-col justify-center">
-  <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="introducing">
+  <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*20)] pb-40" id="introducing">
   
   <div class="min-h-screen flex flex-col justify-center text-center">
-    <div class="relative shadow-sm-c shadow-gbl-yellow dark:shadow-gbd-yellow animate-pulse-shadow p-20">
+    <div class="relative shadow-sm-c shadow-gbl-yellow dark:shadow-gbd-yellow animate-pulse-shadow py-20">
       <div class="absolute -top-8 rotate-45 bg-gbl-bg dark:bg-gbd-bg left-0 right-0 m-auto shadow-sm-c shadow-gbl-yellow dark:shadow-gbd-yellow animate-pulse-shadow w-16 h-16">
         <button id="color-mode1" class="cursor-pointer text-4xl font-bold w-16 h-16 pr-2">
           
@@ -124,10 +124,10 @@
         Hello <span class="inline-block animate-wiggle">󱠡</span>
         , I'm <span class="text-bold text-gbl-red-dim dark:text-gbd-red-dim">Stanislav</span>.
       </div>
-      <div class="flex justify-center text-3xl text-bold my-10">
+      <div class="ml-10 flex justify-center text-3xl text-bold my-10">
         <span class="mr-2 text-gbl-green dark:text-gbd-green">❯</span>
-        <span class="text-left overflow-hidden whitespace-nowrap text-gvl-fg dark:text-gvd-fg self-center text-xl animate-typing">
-          I'm a backend developer with some frontend skills.
+        <span class="text-left overflow-hidden whitespace-nowrap text-gvl-fg dark:text-gvd-fg self-center text-xl animate-typing w-full">
+          I'm a backend-focused developer with frontend experience.
         </span>
       </div>
 
@@ -142,81 +142,119 @@
 
 </section>
   <div class="pt-20 px-10 shadow-lg shadow-gbl-bg1 dark:shadow-gbd-bg1">
-    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="about-me">
+    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*20)] pb-40" id="about-me">
   
   <h2 class="text-5xl text-gbl-green dark:text-gbd-green mb-10">
   About Me
 </h2>
   <div>
-    <p class="indent-2 mb-2 w-3/4">
-      I’m a backend developer with a deep passion for Elixir, Phoenix and Actor system and all things backend development.
-    </p>
-    <p class="indent-2 mb-2 w-3/4">
-      The unique combination of logic and technology and never running out of new things to discover, drives my excitement and passion for backend development.
-    </p>
-    <p class="indent-2 mb-2 w-3/4 mb-100">
-      When I’m not at my computer I like to spend my time reading, keeping fit and playing guitar.
-    </p>
+    <p class="indent-2 mb-8 w-3/4 text-lg">
+  
+      I’m a full-stack developer with a strong focus on backend development, passionate about Elixir, Phoenix, and actor-based systems.
+    
+</p>
+    <p class="indent-2 mb-8 w-3/4 text-lg">
+  
+      I enjoy building scalable, maintainable systems and constantly exploring new technologies to improve my craft. My experience includes designing APIs, optimizing database performance, and working with concurrent systems.
+    
+</p>
+    <p class="indent-2 mb-8 w-3/4 text-lg">
+  
+      While my main expertise is backend development, I also contribute to frontend work when needed, making me a versatile full-stack developer.
+    
+</p>
+    <p class="indent-2 mb-8 w-3/4 text-lg">
+  
+      Outside of work, I enjoy reading, cycling, and playing strategy board games.
+    
+</p>
   </div>
 
 </section>
-    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="experience">
+    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*20)] pb-40" id="experience">
   
   <h2 class="text-5xl text-gbl-green dark:text-gbd-green mb-10">
-  Experience
+  Work Experience
 </h2>
   <div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Biz Launch Equity, Inc
 </h3>
   <h4 class="text-1xl ml-2 pb-2">
-  Fullstack Software Engineer / Sep 2020 - Present
+  Software Engineer / Full-stack Developer
+</h4>
+  <h4 class="text-1xl ml-2 pb-2">
+  Sep 2020 - Present
 </h4>
   <div>
     
     <ul class="ml-10 list-disc">
   
       <li>Developed full-stack applications with React.js and Ruby On Rails.</li>
+      <li>Fully implemented a messaging and chat update system using WebSockets.</li>
       <li>
-        Implemented message system that receives, saves and synchronizes messages between clients via elixir and websockets.
+        Developed an Elixir system for sending messages to clients via Redis Streams and then WebSockets.
       </li>
+      <li>Built an Elixir service that streamed webinars to Facebook Groups.</li>
+      <li>
+        Developed a desktop application using Electron and mobile applications using React Native.
+      </li>
+      <li>
+        Created a service that duplicated messages or questions to Slack, allowing responses directly from Slack.
+      </li>
+      <li>Covered half of the project with tests to improve stability.</li>
     
 </ul>
   
   </div>
 </div>
   <div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Wellnuts, Ltd
 </h3>
   <h4 class="text-1xl ml-2 pb-2">
-  Backend Software Engineer / Feb 2018 - Sep 2020
+  Software Engineer / Backend Developer
+</h4>
+  <h4 class="text-1xl ml-2 pb-2">
+  Feb 2018 - Aug 2020
 </h4>
   <div>
     
     <ul class="ml-10 list-disc">
   
       <li>Developed backend server with Elixir and Phoenix.</li>
+      <li>Built a trip simulator from scratch using GenServers (actor model in Elixir).</li>
+      <li>Developed a simple SFTP server in Go that integrated with AWS S3.</li>
       <li>
-        Conducted code reviews, contributing to maintaining high standards of code quality and team collaboration.
+        Implemented a vehicle clustering system using PostgreSQL with the PostGIS extension.
       </li>
+      <li>Optimized GraphQL queries and mutations.</li>
+      <li>Implemented a notification token invalidation system for expired tokens.</li>
     
 </ul>
   
   </div>
 </div>
   <div class="mt-5 pb-2 mb-5 relative after:content-[''] after:absolute after:left-1/3 after:bottom-0 after:w-3/5 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-gbl-green dark:after:via-gbd-green after:to-transparent after:-translate-x-1/2">
-  <h3 class="text-3xl ml-2 pb-5">
-  Modus Group, LLC
+  <h3 class="text-3xl ml-2 pb-5 italic">
+  Modus Group, LLC (from Radius Telematics)
 </h3>
   <h4 class="text-1xl ml-2 pb-2">
-  Backend Developer / May 2016 - Feb 2018
+  Web Developer
+</h4>
+  <h4 class="text-1xl ml-2 pb-2">
+  May 2016 - Feb 2018
 </h4>
   <div>
     
     <ul class="ml-10 list-disc">
   
-      <li>Developed backend server with Ruby and Ruby On Rails.</li>
+      <li>Optimized Grape API endpoints.</li>
+      <li>
+        Completely refactored the behavior of a model, including callbacks, and moved the logic into service objects.
+      </li>
+      <li>Rewrote all email templates using table-based HTML layout.</li>
+      <li>Maintained and developed an Elixir API.</li>
     
 </ul>
   
@@ -224,110 +262,110 @@
 </div>
 
 </section>
-    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="skills">
+    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*20)] pb-40" id="skills">
   
   <h2 class="text-5xl text-gbl-green dark:text-gbd-green mb-10">
   Skills
 </h2>
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Backend
 </h3>
 <div class="grid gap-6 pb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
   
     <a href="https://elixir-lang.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Elixir
 </h3>
   <span class="text-5xl"></span>
 </a>
     <a href="https://www.phoenixframework.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Phoenix
 </h3>
   <span class="text-5xl"></span>
 </a>
     <a href="https://www.ruby-lang.org/ru/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Ruby
 </h3>
   <span class="text-5xl"></span>
 </a>
     <a href="https://rubyonrails.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Ruby On Rails
 </h3>
   <span class="text-5xl"></span>
 </a>
     <a href="https://www.postgresql.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   PostgreSQL
 </h3>
   <span class="text-5xl"></span>
 </a>
     <a href="https://redis.io/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Redis
 </h3>
   <span class="text-5xl"></span>
 </a>
   
 </div>
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Frontend
 </h3>
 <div class="grid gap-6 pb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
   
-    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   JavaScript
 </h3>
   <span class="text-5xl"></span>
 </a>
-    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+    <a href="https://www.typescriptlang.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   TypeScript
 </h3>
   <span class="text-5xl"></span>
 </a>
     <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   React.js
 </h3>
   <span class="text-5xl"></span>
 </a>
-    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+    <a href="https://tailwindcss.com/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Tailwind
 </h3>
   <span class="text-5xl"></span>
 </a>
-    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   CSS
 </h3>
   <span class="text-5xl"></span>
 </a>
-    <a href="https://react.dev/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   HTML
 </h3>
   <span class="text-5xl"></span>
 </a>
   
 </div>
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   Others
 </h3>
 <div class="grid gap-6 pb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
   
     <a href="https://graphql.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   GraphQL
 </h3>
   <span class="text-5xl"></span>
 </a>
     <a href="https://en.wikipedia.org/wiki/REST" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
-  <h3 class="text-3xl ml-2 pb-5">
+  <h3 class="text-3xl ml-2 pb-5 italic">
   REST
 </h3>
   <span class="text-5xl">󱂛</span>
@@ -336,7 +374,7 @@
 </div>
 
 </section>
-    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*30)] pb-32" id="contact-me">
+    <section class="scroll-mt-30 min-h-[calc(100vh-var(--spacing)*20)] pb-40" id="contact-me">
   
   <h2 class="text-5xl text-gbl-green dark:text-gbd-green mb-10">
   Contact Me
@@ -381,10 +419,10 @@
       <aside id="sidebar" class="fixed right-0 h-screen text-4xl flex flex-col justify-center opacity-0 transition-all duration-200">
   <div class="shadow-sm-l shadow-gbl-yellow dark:shadow-gbd-yellow p-6 flex flex-col rounded-bl-(--radius1) rounded-tl-(--radius1)">
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/Stanislav-Lapata/" class="mb-2">󰊤</a>
-    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/stanislavlapata/?next=%2F" class="mb-2">󰋾</a>
-    <a target="_blank" rel="noopener noreferrer" href="mailto:stanislavlapata@gmail.com" class="mb-2">󰇮</a>
-    <a target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/akSqqmKoCnxoHG3F8" class="mb-2"></a>
     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/stanislavlapata/" class="mb-2">󰌻</a>
+    <a target="_blank" rel="noopener noreferrer" href="mailto:stanislavlapata@gmail.com" class="mb-2">󰇮</a>
+    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/stanislavlapata/" class="mb-2">󰋾</a>
+    <a target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/akSqqmKoCnxoHG3F8" class="mb-2"></a>
   </div>
 </aside>
 <script>
