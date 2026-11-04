@@ -9,7 +9,7 @@
       Stanislav Lapata
     </title>
 
-    <link rel="stylesheet" href="/css/site.css?v=c0a6a20">
+    <link rel="stylesheet" href="/css/site.css?v=a404140">
     <script>
       const toggleColorModeClass = () => {
         document.documentElement.classList.toggle(
@@ -124,11 +124,18 @@
         Hello <span class="inline-block animate-wiggle">󱠡</span>
         , I'm <span class="text-bold text-gbl-red-dim dark:text-gbd-red-dim">Stanislav</span>.
       </div>
-      <div class="ml-10 flex justify-center text-3xl text-bold my-10">
-        <span class="mr-2 text-gbl-green dark:text-gbd-green">❯</span>
-        <span class="text-left overflow-hidden whitespace-nowrap text-gvl-fg dark:text-gvd-fg self-center text-xl animate-typing w-full">
-          I'm a backend-focused developer with frontend experience.
-        </span>
+      <div class="ml-10 my-10 flex justify-center gap-2 text-xl text-bold">
+        <span class="text-gbl-green dark:text-gbd-green">❯</span>
+
+        <div class="flex flex-col text-left text-gvl-fg dark:text-gvd-fg">
+          <span class="typing-line typing-line-1">
+            I'm a Senior Backend Engineer specializing in Elixir, Ruby on Rails,
+          </span>
+
+          <span class="typing-line typing-line-2">
+            and Distributed Systems.
+          </span>
+        </div>
       </div>
 
       <a class="inline-block hover:animate-pulse hover:shadow-md hover:shadow-gbl-fg hover:dark:shadow-gbd-fg py-2 px-4 border-2 rounded-md" href="/Stanislav-Lapata-CV.pdf" download>
@@ -499,14 +506,16 @@
       <ul class="list-disc">
   
         <li>
-          Optimized PostgreSQL queries and reporting workflows through query restructuring, join optimization, and indexing.
+          Optimized PostgreSQL queries and reporting workflows across large vehicle telemetry datasets.
         </li>
 
         <li>
-          Split selected complex reporting operations into multiple queries to enable parallel execution.
+          Worked with datasets typically containing tens or hundreds of millions of trips; one client database contained more than 10 billion recorded trips.
         </li>
 
-        <li>Used background jobs to generate report files.</li>
+        <li>
+          Improved report performance through SQL query optimization, join restructuring, indexing, and background file generation.
+        </li>
       
 </ul>
     
@@ -623,18 +632,18 @@
   <span class="text-5xl"></span>
   
 </a>
-    <a href="https://en.wikipedia.org/wiki/REST" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/REST" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5 italic">
   REST
 </h3>
   <span class="text-5xl">󱂛</span>
   
 </a>
-    <a href="https://en.wikipedia.org/wiki/REST" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://www.ruby-grape.org/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5 italic">
   Grape
 </h3>
-  <span class="text-5xl">󱂛</span>
+  <span class="text-5xl"></span>
   
 </a>
   
@@ -658,14 +667,14 @@
   <span class="text-5xl"></span>
   
 </a>
-    <a href="https://redis.io/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://anycable.io/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5 italic">
   Anycable
 </h3>
   
   <img class="h-12" src="/icons/anycable.svg">
 </a>
-    <a href="https://redis.io/" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
   <h3 class="text-3xl ml-2 pb-5 italic">
   WebSockets
 </h3>
@@ -761,6 +770,13 @@
   Ruby
 </h3>
   <span class="text-5xl"></span>
+  
+</a>
+    <a href="https://en.wikipedia.org/wiki/SQL" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
+  <h3 class="text-3xl ml-2 pb-5 italic">
+  SQL
+</h3>
+  <span class="text-5xl"></span>
   
 </a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="third:rounded-s-none first:rounded-br-none h-35 flex flex-col justify-center items-center border-1 rounded-md shadow-md shadow-gbl-yellow dark:shadow-gbd-yellow hover:shadow-gbl-orange hover:dark:shadow-gbd-orange hover:animate-pulse">
